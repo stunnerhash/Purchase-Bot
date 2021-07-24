@@ -31,7 +31,7 @@ This Bot is inspired by Natewong1313's Bird Bot project yet due to lack of activ
 3. Open Powershell as Administrator within your desired directory for the application to live.
 4. Run the following commands: 
       ```
-      git clone https://github.com/stunnerhash/Purchase-Bot
+      git clone https://github.com/stunnerhash/Purchase-Bot.git
       ```
       ```
       cd Purchase-Bot
@@ -74,7 +74,7 @@ This Bot is inspired by Natewong1313's Bird Bot project yet due to lack of activ
 1. Make sure your Chrome browser is updated to the latest
 2. Run the following commands: 
       ```
-      git clone https://github.com/stunnerhash/Purchase-Bot/
+      git clone https://github.com/stunnerhash/Purchase-Bot.git
       ```
       ```
       cd Purchase-Bot
