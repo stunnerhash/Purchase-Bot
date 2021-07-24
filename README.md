@@ -1,5 +1,5 @@
-# Phoenix Bot
-[Discord](https://discord.gg/mTp4awX9wB)<br/><br/>
+# Purchase Bot
+<!-- [Discord](https://discord.gg/mTp4awX9wB)<br/><br/>
 Phoenix Bot is inspired by Natewong1313's Bird Bot project yet due to lack of activity by their team. We have decided to revive this project to achieve a common goal. Due to the recent insurgence of botters/scalpers taking advantage, our goal is to enable everyone the ability to combat these botters/scalpers by implementing their own botting system. Currently, this auto-checkout bot will support Walmart, Best Buy, Gamestop, & Target. There are more plans for future implementations later on. 
 
 * Easy to use interface built on PyQt5
@@ -24,7 +24,7 @@ Phoenix Bot is inspired by Natewong1313's Bird Bot project yet due to lack of ac
 
 ## Phoenix Bot Repository Link
 [View The Repo Here](https://github.com/Strip3s/PhoenixBot.git/)
-
+ -->
 ## Quick Install for Windows
 1. Make sure your Chrome browser is updated to the latest
 2. Install the latest version of [Git](https://git-scm.com/downloads) & [Python](https://www.python.org/downloads/)
