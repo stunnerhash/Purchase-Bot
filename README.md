@@ -1,6 +1,6 @@
-<!-- # Purchase Bot 
-[Discord](https://discord.gg/mTp4awX9wB)<br/><br/>
-Thsi is inspired by Natewong1313's Bird Bot project yet due to lack of activity by their team. We have decided to revive this project to achieve a common goal. Due to the recent insurgence of botters/scalpers taking advantage, our goal is to enable everyone the ability to combat these botters/scalpers by implementing their own botting system. Currently, this auto-checkout bot will support Walmart, Best Buy, Gamestop, & Target. There are more plans for future implementations later on. 
+# Purchase Bot
+<!-- [Discord](https://discord.gg/mTp4awX9wB)<br/><br/>
+This Bot is inspired by Natewong1313's Bird Bot project yet due to lack of activity by their team. We have decided to revive this project to achieve a common goal. Due to the recent insurgence of botters/scalpers taking advantage, our goal is to enable everyone the ability to combat these botters/scalpers by implementing their own botting system. Currently, this auto-checkout bot will support Walmart, Best Buy, Gamestop, & Target. There are more plans for future implementations later on. 
 
 * Easy to use interface built on PyQt5
 * Waits for items to restock if they are out of stock
@@ -18,23 +18,23 @@ Thsi is inspired by Natewong1313's Bird Bot project yet due to lack of activity 
 | walmart.com |`✔`| | |
 
 <p align="center">
-  <img src="https://imgur.com/pILriDO.png" alt="Phoenix Bot UI" width="738">
+  <img src="https://imgur.com/pILriDO.png" alt="Purchase Bot UI" width="738">
 </p>
 
 
-## Phoenix Bot Repository Link
-[View The Repo Here](https://github.com/stunnerhash/Purchase-Bot/) -->
-
+## Purchase Bot Repository Link
+[View The Repo Here](https://github.com/stunnerhash/Purchase-Bot/)
+ -->
 ## Quick Install for Windows
 1. Make sure your Chrome browser is updated to the latest
 2. Install the latest version of [Git](https://git-scm.com/downloads) & [Python](https://www.python.org/downloads/)
 3. Open Powershell as Administrator within your desired directory for the application to live.
 4. Run the following commands: 
       ```
-      git clone https://github.com/Strip3s/PhoenixBot/
+      git clone https://github.com/stunnerhash/Purchase-Bot.git
       ```
       ```
-      cd PhoenixBot
+      cd Purchase-Bot
       ```
       ```
       python -m venv ./env
@@ -74,10 +74,10 @@ Thsi is inspired by Natewong1313's Bird Bot project yet due to lack of activity 
 1. Make sure your Chrome browser is updated to the latest
 2. Run the following commands: 
       ```
-      git clone https://github.com/Strip3s/PhoenixBot/
+      git clone https://github.com/stunnerhash/Purchase-Bot.git
       ```
       ```
-      cd PhoenixBot
+      cd Purchase-Bot
       ```
       ```
       python3 -m venv ./env
