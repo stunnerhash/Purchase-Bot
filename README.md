@@ -18,7 +18,7 @@ This Bot is inspired by Natewong1313's Bird Bot project yet due to lack of activ
 | walmart.com |`✔`| | |
 
 <p align="center">
-  <img src="https://imgur.com/pILriDO.png" alt="Purchase Bot UI" width="738">
+  <img src="" alt="Purchase Bot UI" width="738">
 </p>
 
 
@@ -48,7 +48,14 @@ This Bot is inspired by Natewong1313's Bird Bot project yet due to lack of activ
       ```
       pip install -r requirements.txt
       ```
-4. If you encounter any errors during installation, please consider the following:
+      ```
+      pip install chromedriver_py 
+      ```
+4.1 If you encouter any errors while running ./env/scripts/activate use command:
+```
+setExecutionPolicy RemoteSigned
+```
+4.2 If you encounter any errors during installation, please consider the following:
     * If you get a red text error remove and you previously installed pyqt5 or lxml on your python, remove the versions from the **requirements.in** for both lxml and pyqt5, then run the following commands:
     ```
     pip install pip-tools==5.5.0
