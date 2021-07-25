@@ -204,7 +204,7 @@ class SettingsPage(QtWidgets.QWidget):
 
         write_data("./data/settings.json", settings)
         self.update_settings(settings)
-        QtWidgets.QMessageBox.information(self, "Phoenix Bot", "Saved Settings")
+        QtWidgets.QMessageBox.information(self, "Purchase Bot", "Saved Settings")
 
     def update_settings(self, settings_data):
         global webhook, webhook_on_browser, webhook_on_order, webhook_on_failed, browser_on_failed, bb_ac_beta, dont_buy, random_delay_start, random_delay_stop, target_user, target_pass, gamestop_user, gamestop_pass

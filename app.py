@@ -3,9 +3,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from pages.homepage import HomePage, TaskTab
 from pages.createdialog import CreateDialog
 from pages.profilespage import ProfilesPage
-from pages.proxiespage import ProxiesPage
+# from pages.proxiespage import ProxiesPage
 from pages.settingspage import SettingsPage
-from pages.pollbrowser import PollBrowserDialog
+# from pages.pollbrowser import PollBrowserDialog
 import sys, os, settings
 from theming.styles import globalStyles
 
@@ -138,7 +138,7 @@ class MainWindow(QtWidgets.QMainWindow):
         site = self.createdialog.site_box.currentText()
         product = self.createdialog.input_edit.text()
         profile = self.createdialog.profile_box.currentText()
-        proxies = self.createdialog.proxies_box.currentText()
+        # proxies = self.createdialog.proxies_box.currentText()
         monitor_delay = self.createdialog.monitor_edit.text()
         error_delay = self.createdialog.error_edit.text()
         max_price = self.createdialog.price_edit.text() if self.createdialog.maxprice_checkbox.isChecked() else ""
@@ -149,7 +149,7 @@ class MainWindow(QtWidgets.QMainWindow):
                     site,
                     product,
                     profile,
-                    proxies,
+                    # proxies,
                     monitor_delay,
                     error_delay,
                     max_price,

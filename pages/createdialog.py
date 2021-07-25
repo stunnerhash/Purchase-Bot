@@ -39,17 +39,24 @@ class CreateDialog(QtWidgets.QDialog):
         self.profile_box.setStyleSheet("outline: 0;border: 1px solid {};border-width: 0 0 2px;color: rgb(234, 239, 239);".format(globalStyles["primary"]))
         self.profile_box.addItem("Profile")
         self.profile_box.setFont(font)
-        self.proxies_box = QtWidgets.QComboBox(self.background)
-        self.proxies_box.setGeometry(QtCore.QRect(450, 70, 151, 21))
-        self.proxies_box.setStyleSheet("outline: 0;border: 1px solid {};border-width: 0 0 2px;color: rgb(234, 239, 239);".format(globalStyles["primary"]))
-        self.proxies_box.addItem("Proxy List")
-        self.proxies_box.addItem("None")
-        self.proxies_box.setFont(font)
+        # self.proxies_box = QtWidgets.QComboBox(self.background)
+        # self.proxies_box.setGeometry(QtCore.QRect(450, 70, 151, 21))
+        # self.proxies_box.setStyleSheet("outline: 0;border: 1px solid {};border-width: 0 0 2px;color: rgb(234, 239, 239);".format(globalStyles["primary"]))
+        # self.proxies_box.addItem("Proxy List")
+        # self.proxies_box.addItem("None")
+        # self.proxies_box.setFont(font)
+        self.taskcount_spinbox = QtWidgets.QSpinBox(self.background)
+        self.taskcount_spinbox.setGeometry(QtCore.QRect(450,70, 151, 21))
+        # self.taskcount_spinbox.setGeometry(QtCore.QRect(420, 115, 41, 21))
+        self.taskcount_spinbox.setStyleSheet("border: 1px solid {};border-width: 0 0 2px;color: #FFFFFF;".format(globalStyles["primary"]))
+        self.taskcount_spinbox.setMinimum(1)
+        self.taskcount_spinbox.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
+		
         self.monitor_edit = QtWidgets.QLineEdit(self.background)
         self.monitor_edit.setGeometry(QtCore.QRect(50, 70, 61, 21))
         self.monitor_edit.setStyleSheet("outline: 0;border: 1px solid {};border-width: 0 0 2px;color: rgb(234, 239, 239);".format(globalStyles["primary"]))
         self.monitor_edit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
-        self.monitor_edit.setPlaceholderText("Monitor")
+        self.monitor_edit.setPlaceholderText("Monitor delay")
         self.monitor_edit.setFont(font)
         self.monitor_edit.setText("5.0")
         self.only_float = QtGui.QDoubleValidator()
@@ -58,7 +65,7 @@ class CreateDialog(QtWidgets.QDialog):
         self.error_edit.setGeometry(QtCore.QRect(140, 70, 61, 21))
         self.error_edit.setStyleSheet("outline: 0;border: 1px solid {};border-width: 0 0 2px;color: rgb(234, 239, 239);".format(globalStyles["primary"]))
         self.error_edit.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
-        self.error_edit.setPlaceholderText("Error")
+        self.error_edit.setPlaceholderText("Error delay")
         self.error_edit.setFont(font)
         self.error_edit.setText("5.0")
         self.error_edit.setValidator(self.only_float)
@@ -87,27 +94,23 @@ class CreateDialog(QtWidgets.QDialog):
         self.addtask_btn.setFont(font)
         self.addtask_btn.setStyleSheet("border-radius: 10px;background-color: {};color: #FFFFFF;".format(globalStyles["primary"]))
         self.addtask_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.taskcount_spinbox = QtWidgets.QSpinBox(self.background)
-        self.taskcount_spinbox.setGeometry(QtCore.QRect(420, 115, 41, 21))
-        self.taskcount_spinbox.setStyleSheet("border: 1px solid {};border-width: 0 0 2px;color: #FFFFFF;".format(globalStyles["primary"]))
-        self.taskcount_spinbox.setMinimum(1)
-        self.taskcount_spinbox.setAttribute(QtCore.Qt.WA_MacShowFocusRect, 0)
 
-        self.site_box.addItem("Bestbuy")
+
         self.site_box.addItem("Walmart")
         self.site_box.addItem("Target")
-        self.site_box.addItem("GameStop")
+        # self.site_box.addItem("Bestbuy")
+        # self.site_box.addItem("GameStop")
 
         QtCore.QMetaObject.connectSlotsByName(CreateDialog)
     def autofill(self):
-        if "bestbuy" in self.input_edit.text():
-            self.site_box.setCurrentIndex(self.site_box.findText("Bestbuy"))
-        elif "walmart" in self.input_edit.text():
+        if "walmart" in self.input_edit.text():
             self.site_box.setCurrentIndex(self.site_box.findText("Walmart"))
         elif "target" in self.input_edit.text():
             self.site_box.setCurrentIndex(self.site_box.findText("Target"))
-        elif "gamestop" in self.input_edit.text():
-            self.site_box.setCurrentIndex(self.site_box.findText("GameStop"))
+        # elif "bestbuy" in self.input_edit.text():
+        #     self.site_box.setCurrentIndex(self.site_box.findText("Bestbuy"))
+        # elif "gamestop" in self.input_edit.text():
+        #     self.site_box.setCurrentIndex(self.site_box.findText("GameStop"))
 
     def load_data(self, task_tab):
         self.site_box.setCurrentText(task_tab.site)

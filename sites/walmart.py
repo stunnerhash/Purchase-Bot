@@ -7,8 +7,7 @@ import urllib, requests, time, lxml.html, json, sys, settings
 
 
 class Walmart:
-    def __init__(self, task_id, status_signal, image_signal, wait_poll_signal, polling_wait_condition, product, profile,
-                 proxy, monitor_delay, error_delay, max_price):
+    def __init__(self, task_id, status_signal, image_signal, wait_poll_signal, polling_wait_condition, product, profile, proxy, monitor_delay, error_delay, max_price):
         self.task_id, self.status_signal, self.image_signal, self.product, self.profile, self.monitor_delay, self.error_delay, self.max_price = task_id, status_signal, image_signal, product, profile, float(
             monitor_delay), float(error_delay), max_price
 
@@ -23,7 +22,7 @@ class Walmart:
             self.session.proxies.update(proxy)
         starting_msg = "Starting"
         if settings.dont_buy:
-            starting_msg = "Starting in dev mode - Phoenix Bot will not actually checkout (dont_buy = True)"
+            starting_msg = "Starting in dev mode - Purchase  Bot will not actually checkout (dont_buy = True)"
         self.status_signal.emit({"msg": starting_msg, "status": "normal"})
         self.product_image, offer_id = self.monitor()
         did_add = self.atc(offer_id)
@@ -459,6 +458,7 @@ class Walmart:
         options.add_argument('--ignore-certificate-errors') #removes SSL errors from terminal
         options.add_experimental_option("excludeSwitches", ["enable-logging"]) #removes device adapter errors from terminal   
         browser = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=options)
+        # browser = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=options)
         browser.get("https://www.walmart.com")
 
         # pass current session cookies to browser before loading url

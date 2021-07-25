@@ -36,6 +36,9 @@ This Bot is inspired by Natewong1313's Bird Bot project yet due to lack of activ
       ```
       cd Purchase-Bot
       ```
+	  ```
+	  Set-ExecutionPolicy RemoteSigned
+	  ```
       ```
       python -m venv ./env
       ```

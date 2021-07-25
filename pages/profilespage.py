@@ -384,7 +384,7 @@ class ProfilesPage(QtWidgets.QWidget):
         if self.loadprofile_box.findText(profile_name) == -1:
             self.loadprofile_box.addItem(profile_name)
             self.parent().parent().createdialog.profile_box.addItem(profile_name)
-        QtWidgets.QMessageBox.information(self, "Phoenix Bot", "Saved Profile")
+        QtWidgets.QMessageBox.information(self, "Purchase Bot", "Saved Profile")
     
     def delete_profile(self):
         profile_name = self.profilename_edit.text()
@@ -425,4 +425,4 @@ class ProfilesPage(QtWidgets.QWidget):
         self.cardyear_box.setCurrentIndex(0)
         self.cardtype_box.setCurrentIndex(0)
         self.cardcvv_edit.setText("")
-        QtWidgets.QMessageBox.information(self, "Phoenix Bot", "Deleted Profile")
+        QtWidgets.QMessageBox.information(self, "Purchase Bot", "Deleted Profile")
