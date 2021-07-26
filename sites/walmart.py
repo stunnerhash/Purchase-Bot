@@ -120,7 +120,7 @@ class Walmart:
                     return True
                 else:
                     self.handle_captcha("https://www.walmart.com/cart")
-                    self.status_signal.emit({"msg": "Error Adding To Cart", "status": "error"})
+                    self.status_signal.emit({"msg": "Waiting to add To Cart", "status": "error"})
                     time.sleep(self.error_delay)
                     return False
             except Exception as e:

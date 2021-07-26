@@ -66,10 +66,8 @@ class SettingsPage(QtWidgets.QWidget):
         self.settings_card.setFont(self.small_font)
         self.settings_card.setStyleSheet("background-color: #232323;border-radius: 20px;border: 1px solid #2e2d2d;")
 
-        self.webhook_edit = self.create_edit(self.settings_card, QtCore.QRect(30, 50, 411, 21), self.small_font,
-                                             "Webhook Link")
-        self.webhook_header = self.create_header(self.settings_card, QtCore.QRect(20, 10, 101, 31), self.header_font,
-                                                 "Webhook")
+			# self.webhook_edit = self.create_edit(self.settings_card, QtCore.QRect(30, 50, 411, 21), self.small_font, "Webhook Link")
+			# self.webhook_header = self.create_header(self.settings_card, QtCore.QRect(20, 10, 101, 31), self.header_font, "Webhook")
 
         self.savesettings_btn = QtWidgets.QPushButton(self.settings_card)
         self.savesettings_btn.setGeometry(QtCore.QRect(190, 450, 86, 32))
@@ -81,31 +79,26 @@ class SettingsPage(QtWidgets.QWidget):
         self.savesettings_btn.setText("Save")
         self.savesettings_btn.clicked.connect(self.save_settings)
 
-        self.browser_checkbox = self.create_checkbox(QtCore.QRect(30, 90, 300, 20), "Browser Opened")
-        self.order_checkbox = self.create_checkbox(QtCore.QRect(30, 120, 221, 20), "Order Placed")
-        self.paymentfailed_checkbox = self.create_checkbox(QtCore.QRect(30, 150, 121, 20), "Payment Failed")
-
-        self.general_header = self.create_header(self.settings_card, QtCore.QRect(20, 180, 101, 31), self.header_font,
-                                                 "General")
-        self.onfailed_checkbox = self.create_checkbox(QtCore.QRect(30, 220, 221, 20), "Open browser on payment failed")
-        self.bb_ac_beta_checkbox = self.create_checkbox(QtCore.QRect(30, 240, 221, 20), "Enable Best Buy Auto Checkout (BETA)")
-        self.buy_one_checkbox = self.create_checkbox(QtCore.QRect(30, 260, 221, 20), "Stop All after success")
-        self.dont_buy_checkbox = self.create_checkbox(QtCore.QRect(30, 280, 400, 20),
-                                                      "Don't actually buy items. (Used for dev and testing)")
-        self.random_delay_start = self.create_edit(self.settings_card, QtCore.QRect(30, 310, 235, 20),
-                                                   self.small_font, "Random Start Delay (Default is 10ms)")
-        self.random_delay_stop = self.create_edit(self.settings_card, QtCore.QRect(30, 335, 235, 20),
-                                                  self.small_font, "Random Stop Delay (Default is 40ms)")
-        self.proxies_header = self.create_header(self.settingspage, QtCore.QRect(30, 10, 81, 31),
-                                                 self.create_font("Arial", 22), "Settings")
+        # self.browser_checkbox = self.create_checkbox(QtCore.QRect(30, 90, 300, 20), "Browser Opened")
+        # self.order_checkbox = self.create_checkbox(QtCore.QRect(30, 120, 221, 20), "Order Placed")
+        # self.paymentfailed_checkbox = self.create_checkbox(QtCore.QRect(30, 150, 121, 20), "Payment Failed")
+		# add 150 in the y cordinate of below elements	
+        self.general_header = self.create_header(self.settings_card, QtCore.QRect(20, 30, 101, 31), self.header_font, "General")
+        self.onfailed_checkbox = self.create_checkbox(QtCore.QRect(30, 70, 221, 20), "Open browser on payment failed")
+        # self.bb_ac_beta_checkbox = self.create_checkbox(QtCore.QRect(30, 130, 221, 20), "Enable Best Buy Auto Checkout (BETA)")
+        self.buy_one_checkbox = self.create_checkbox(QtCore.QRect(30, 110, 221, 20), "Stop All after success")
+        self.dont_buy_checkbox = self.create_checkbox(QtCore.QRect(30, 90, 400, 20), "Don't actually buy items. (Used for dev and testing)")
+        self.random_delay_start = self.create_edit(self.settings_card, QtCore.QRect(30, 160, 235, 20), self.small_font, "Random Start Delay (Default is 10ms)")
+        self.random_delay_stop = self.create_edit(self.settings_card, QtCore.QRect(30, 185, 235, 20), self.small_font, "Random Stop Delay (Default is 40ms)")
+        self.proxies_header = self.create_header(self.settingspage, QtCore.QRect(30, 10, 81, 31), self.create_font("Arial", 22), "Settings")
         # self.bestbuy_user_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 310, 235, 20),
         #                                           self.small_font, "Bestbuy.com Username (Email)")
         # self.bestbuy_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 335, 235, 20),
         #                                           self.small_font, "Bestbuy.com Password")
-        self.target_user_edit = self.create_edit(self.settings_card, QtCore.QRect(30, 365, 235, 20),
-                                                 self.small_font, "Target.com Username (Email/Cell #)")
-        self.target_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(30, 390, 235, 20),
-                                                 self.small_font, "Target.com Password")
+        # self.target_user_edit = self.create_edit(self.settings_card, QtCore.QRect(30, 215, 235, 20),
+        #                                          self.small_font, "Target.com Username (Email/Cell #)")
+        # self.target_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(30, 240, 235, 20),
+        #                                          self.small_font, "Target.com Password")
         # self.gamestop_user_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 365, 235, 20),
         #                                            self.small_font, "Gamestop.com Username (Email)")
         # self.gamestop_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 390, 235, 20),
@@ -129,13 +122,13 @@ class SettingsPage(QtWidgets.QWidget):
                                               "This will most likely cause a fatal exception. "
                                               "Try removing existing settings.json")
 
-        self.webhook_edit.setText(settings["webhook"])
-        if settings["webhookonbrowser"]:
-            self.browser_checkbox.setChecked(True)
-        if settings["webhookonorder"]:
-            self.order_checkbox.setChecked(True)
-        if settings["webhookonfailed"]:
-            self.paymentfailed_checkbox.setChecked(True)
+        # self.webhook_edit.setText(settings["webhook"])
+        # if settings["webhookonbrowser"]:
+        #     self.browser_checkbox.setChecked(True)
+        # if settings["webhookonorder"]:
+        #     self.order_checkbox.setChecked(True)
+        # if settings["webhookonfailed"]:
+        #     self.paymentfailed_checkbox.setChecked(True)
         if settings["browseronfailed"]:
             self.onfailed_checkbox.setChecked(True)
         if settings["bb_ac_beta"]:
@@ -160,16 +153,16 @@ class SettingsPage(QtWidgets.QWidget):
         # except:
         #     self.bestbuy_pass_edit.setText("")
 
-        try:
-            self.target_user_edit.setText(settings["target_user"])
-        except:
-            self.target_user_edit.setText("")
+        # try:
+        #     self.target_user_edit.setText(settings["target_user"])
+        # except:
+        #     self.target_user_edit.setText("")
 
-        try:
-            self.target_pass_edit.setText(
-                (Encryption().decrypt(settings["target_pass"].encode("utf-8"))).decode("utf-8"))
-        except:
-            self.target_pass_edit.setText("")
+        # try:
+        #     self.target_pass_edit.setText(
+        #         (Encryption().decrypt(settings["target_pass"].encode("utf-8"))).decode("utf-8"))
+        # except:
+        #     self.target_pass_edit.setText("")
 
         # try:
         #     self.gamestop_user_edit.setText(settings["gamestop_user"])

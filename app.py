@@ -5,7 +5,7 @@ from pages.createdialog import CreateDialog
 from pages.profilespage import ProfilesPage
 # from pages.proxiespage import ProxiesPage
 from pages.settingspage import SettingsPage
-from pages.pollbrowser import PollBrowserDialog
+# from pages.pollbrowser import PollBrowserDialog
 import sys, os, settings
 from theming.styles import globalStyles
 
@@ -96,12 +96,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.logo.setGeometry(QtCore.QRect(10, 23, 41, 41))
         self.logo.setStyleSheet("border: none;color:red;")
         self.logo.setText("")
-        self.logo.setPixmap(QtGui.QPixmap("images/birdbot.png"))
+        self.logo.setPixmap(QtGui.QPixmap(""))
         self.logo.setScaledContents(True)
         self.homepage = HomePage(self.centralwidget)
         self.createdialog = CreateDialog(self)
         self.createdialog.addtask_btn.clicked.connect(self.create_task)
-        self.createdialog.setWindowIcon(QtGui.QIcon("images/birdbot.png"))
+        self.createdialog.setWindowIcon(QtGui.QIcon(""))
         self.createdialog.hide()
         self.profilespage = ProfilesPage(self.centralwidget)
         self.profilespage.hide()
@@ -167,5 +167,5 @@ class MainWindow(QtWidgets.QMainWindow):
 if __name__ == "__main__":
     ui_app = QtWidgets.QApplication(sys.argv)
     ui = MainWindow()
-    ui.setWindowIcon(QtGui.QIcon("images/birdbot.png"))
+    ui.setWindowIcon(QtGui.QIcon(""))
     os._exit(ui_app.exec_())
