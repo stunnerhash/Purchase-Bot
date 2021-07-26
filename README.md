@@ -1,26 +1,11 @@
 # Purchase Bot
-<!-- [Discord](https://discord.gg/mTp4awX9wB)<br/><br/>
-This Bot is inspired by Natewong1313's Bird Bot project yet due to lack of activity by their team. We have decided to revive this project to achieve a common goal. Due to the recent insurgence of botters/scalpers taking advantage, our goal is to enable everyone the ability to combat these botters/scalpers by implementing their own botting system. Currently, this auto-checkout bot will support Walmart, Best Buy, Gamestop, & Target. There are more plans for future implementations later on. 
-
+<!--<br/><br/>
 * Easy to use interface built on PyQt5
 * Waits for items to restock if they are out of stock
 * Optional price checker
 * Lighting fast auto-checkout
 
 ## Current Functionality
-
-| **Website** | **Auto Checkout** | **Open Cart Link** | **Work In Progress** |
-|:---:|:---:|:---:|:---:|
-| amazon.com | | |`✔`|
-| bestbuy.com |`✔`|`✔`| |
-| gamestop.com |`✔`| | |
-| target.com |`✔`| | |
-| walmart.com |`✔`| | |
-
-<p align="center">
-  <img src="" alt="Purchase Bot UI" width="738">
-</p>
-
 
 ## Purchase Bot Repository Link
 [View The Repo Here](https://github.com/stunnerhash/Purchase-Bot/)
@@ -129,7 +114,7 @@ To resume working on the bot for testing after closing powershell, navigate agai
   ./env/Scripts/activate
   python app.py
   ```
-
+<!-- 
 
 ## Contributing
 This project uses pip-compile with the --generate-hashes flag to validate dependencies via checksums. This helps prevent updates to existing package versions on PyPI from adding new code to our project. When changing requirements, make updates in the requirements.in file, then compile using the command below to update requirements.txt before committing.
@@ -140,3 +125,4 @@ If you receive an error when running this command related to pinning a version o
 ```
 python -m pip install --upgrade pip
 ```
+ -->
