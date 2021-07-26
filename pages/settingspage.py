@@ -98,18 +98,18 @@ class SettingsPage(QtWidgets.QWidget):
                                                   self.small_font, "Random Stop Delay (Default is 40ms)")
         self.proxies_header = self.create_header(self.settingspage, QtCore.QRect(30, 10, 81, 31),
                                                  self.create_font("Arial", 22), "Settings")
-        self.bestbuy_user_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 310, 235, 20),
-                                                  self.small_font, "Bestbuy.com Username (Email)")
-        self.bestbuy_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 335, 235, 20),
-                                                  self.small_font, "Bestbuy.com Password")
+        # self.bestbuy_user_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 310, 235, 20),
+        #                                           self.small_font, "Bestbuy.com Username (Email)")
+        # self.bestbuy_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 335, 235, 20),
+        #                                           self.small_font, "Bestbuy.com Password")
         self.target_user_edit = self.create_edit(self.settings_card, QtCore.QRect(30, 365, 235, 20),
                                                  self.small_font, "Target.com Username (Email/Cell #)")
         self.target_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(30, 390, 235, 20),
                                                  self.small_font, "Target.com Password")
-        self.gamestop_user_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 365, 235, 20),
-                                                   self.small_font, "Gamestop.com Username (Email)")
-        self.gamestop_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 390, 235, 20),
-                                                   self.small_font, "Gamestop.com Password")
+        # self.gamestop_user_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 365, 235, 20),
+        #                                            self.small_font, "Gamestop.com Username (Email)")
+        # self.gamestop_pass_edit = self.create_edit(self.settings_card, QtCore.QRect(300, 390, 235, 20),
+        #                                            self.small_font, "Gamestop.com Password")
 
         self.set_data()
         QtCore.QMetaObject.connectSlotsByName(settingspage)
@@ -149,16 +149,16 @@ class SettingsPage(QtWidgets.QWidget):
         if settings['random_delay_stop']:
             self.random_delay_stop.setText(settings["random_delay_stop"])
 
-        try:
-            self.bestbuy_user_edit.setText(settings["bestbuy_user"])
-        except:
-            self.bestbuy_user_edit.setText("")
+        # try:
+        #     self.bestbuy_user_edit.setText(settings["bestbuy_user"])
+        # except:
+        #     self.bestbuy_user_edit.setText("")
 
-        try:
-            self.bestbuy_pass_edit.setText(
-                (Encryption().decrypt(settings["bestbuy_pass"].encode("utf-8"))).decode("utf-8"))
-        except:
-            self.bestbuy_pass_edit.setText("")
+        # try:
+        #     self.bestbuy_pass_edit.setText(
+        #         (Encryption().decrypt(settings["bestbuy_pass"].encode("utf-8"))).decode("utf-8"))
+        # except:
+        #     self.bestbuy_pass_edit.setText("")
 
         try:
             self.target_user_edit.setText(settings["target_user"])
@@ -171,16 +171,16 @@ class SettingsPage(QtWidgets.QWidget):
         except:
             self.target_pass_edit.setText("")
 
-        try:
-            self.gamestop_user_edit.setText(settings["gamestop_user"])
-        except:
-            self.gamestop_user_edit.setText("")
+        # try:
+        #     self.gamestop_user_edit.setText(settings["gamestop_user"])
+        # except:
+        #     self.gamestop_user_edit.setText("")
 
-        try:
-            self.gamestop_pass_edit.setText(
-                (Encryption().decrypt(settings["gamestop_pass"].encode("utf-8"))).decode("utf-8"))
-        except:
-            self.gamestop_pass_edit.setText("")
+        # try:
+        #     self.gamestop_pass_edit.setText(
+        #         (Encryption().decrypt(settings["gamestop_pass"].encode("utf-8"))).decode("utf-8"))
+        # except:
+        #     self.gamestop_pass_edit.setText("")
 
         self.update_settings(settings)
 

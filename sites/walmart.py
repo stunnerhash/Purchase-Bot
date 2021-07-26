@@ -22,7 +22,7 @@ class Walmart:
             self.session.proxies.update(proxy)
         starting_msg = "Starting"
         if settings.dont_buy:
-            starting_msg = "Starting in dev mode - Purchase  Bot will not actually checkout (dont_buy = True)"
+            starting_msg = "Starting in dev mode - Purchase Bot will not actually checkout (dont_buy = True)"
         self.status_signal.emit({"msg": starting_msg, "status": "normal"})
         self.product_image, offer_id = self.monitor()
         did_add = self.atc(offer_id)
@@ -458,7 +458,6 @@ class Walmart:
         options.add_argument('--ignore-certificate-errors') #removes SSL errors from terminal
         options.add_experimental_option("excludeSwitches", ["enable-logging"]) #removes device adapter errors from terminal   
         browser = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=options)
-        # browser = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=options)
         browser.get("https://www.walmart.com")
 
         # pass current session cookies to browser before loading url

@@ -38,8 +38,7 @@ if platform.system() == "Windows":
 else:
     init()
 
-print(normal_color + "Welcome To Phoenix Bot - In times of crisis, "
-                     "the wise build bridges while the foolish build barriers.")
+print(normal_color + "Hey there, I'm your automtaic purchase bot.\nLet me make those purchases automatic and lightning fast for you")
 
 
 class BirdLogger:
@@ -137,7 +136,7 @@ def format_proxy(proxy):
 
 def send_webhook(webhook_type, site, profile, task_id, image_url):
     if settings.webhook != "":
-        webhook = DiscordWebhook(url=settings.webhook, username="Phoenix Bot",
+        webhook = DiscordWebhook(url=settings.webhook, username="Purchase Bot",
                                  avatar_url="https://i.imgur.com/60G42xE.png")
         if webhook_type == "OP":
             if not settings.webhook_on_order:
@@ -151,7 +150,7 @@ def send_webhook(webhook_type, site, profile, task_id, image_url):
             if not settings.webhook_on_failed:
                 return
             embed = DiscordEmbed(title="Payment Failed", color=0xfc5151)
-        embed.set_footer(text="Via Phoenix Bot", icon_url="https://i.imgur.com/60G42xE.png")
+        embed.set_footer(text="Via Purchase Bot", icon_url="https://i.imgur.com/60G42xE.png")
         embed.add_embed_field(name="Site", value=site, inline=True)
         embed.add_embed_field(name="Profile", value=profile, inline=True)
         embed.add_embed_field(name="Task ID", value=task_id, inline=True)

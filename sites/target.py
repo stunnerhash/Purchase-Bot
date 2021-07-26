@@ -8,7 +8,7 @@ from utils import random_delay, send_webhook, create_msg
 from utils.selenium_utils import change_driver
 import settings, time
 
-	
+
 class Target:
     def __init__(self, task_id, status_signal, image_signal, product, profile, proxy, monitor_delay, error_delay):
         self.task_id, self.status_signal, self.image_signal, self.product, self.profile, self.monitor_delay, self.error_delay = task_id, status_signal, image_signal, product, profile, float(

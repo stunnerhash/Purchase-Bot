@@ -5,7 +5,7 @@ from pages.createdialog import CreateDialog
 from pages.profilespage import ProfilesPage
 # from pages.proxiespage import ProxiesPage
 from pages.settingspage import SettingsPage
-# from pages.pollbrowser import PollBrowserDialog
+from pages.pollbrowser import PollBrowserDialog
 import sys, os, settings
 from theming.styles import globalStyles
 
@@ -68,7 +68,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.profiles_icon.setScaledContents(True)
         self.profiles_icon.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         # self.proxies_tab = QtWidgets.QWidget(self.sidebar)
-        # self.proxies_tab.setGeometry(QtCore.QRect(0, 220, 60, 45))
+        # self.proxies_tab.setGeometry(QtCore.QRect(0, 175, 60, 45))
         # self.proxies_tab.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         # self.proxies_tab.setStyleSheet("background-color: transparent;border: none;")
         # self.proxies_active_tab = QtWidgets.QWidget(self.proxies_tab)
@@ -80,6 +80,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # self.proxies_icon.setPixmap(QtGui.QPixmap("images/proxies.png"))
         # self.proxies_icon.setScaledContents(True)
         self.settings_tab = QtWidgets.QWidget(self.sidebar)
+        # self.settings_tab.setGeometry(QtCore.QRect(0, 220, 60, 45))
         self.settings_tab.setGeometry(QtCore.QRect(0, 175, 60, 45))
         self.settings_tab.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.settings_tab.setStyleSheet("background-color: transparent;border: none;")
@@ -95,12 +96,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.logo.setGeometry(QtCore.QRect(10, 23, 41, 41))
         self.logo.setStyleSheet("border: none;color:red;")
         self.logo.setText("")
-        self.logo.setPixmap(QtGui.QPixmap(""))
+        self.logo.setPixmap(QtGui.QPixmap("images/birdbot.png"))
         self.logo.setScaledContents(True)
         self.homepage = HomePage(self.centralwidget)
         self.createdialog = CreateDialog(self)
         self.createdialog.addtask_btn.clicked.connect(self.create_task)
-        self.createdialog.setWindowIcon(QtGui.QIcon(""))
+        self.createdialog.setWindowIcon(QtGui.QIcon("images/birdbot.png"))
         self.createdialog.hide()
         self.profilespage = ProfilesPage(self.centralwidget)
         self.profilespage.hide()
@@ -156,11 +157,15 @@ class MainWindow(QtWidgets.QMainWindow):
                     self.homepage.stop_all_tasks,
                     self.homepage.scrollAreaWidgetContents)
                 self.homepage.verticalLayout.addWidget(tab)
-                spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+                spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum,
+                                                   QtWidgets.QSizePolicy.Expanding)
                 self.homepage.verticalLayout.addItem(spacerItem)
+
+            # (.*)
+
 
 if __name__ == "__main__":
     ui_app = QtWidgets.QApplication(sys.argv)
     ui = MainWindow()
-    ui.setWindowIcon(QtGui.QIcon(""))
+    ui.setWindowIcon(QtGui.QIcon("images/birdbot.png"))
     os._exit(ui_app.exec_())
