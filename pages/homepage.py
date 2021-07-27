@@ -437,14 +437,14 @@ class TaskTab(QtWidgets.QWidget):
         self.edit_dialog = CreateDialog()
         self.edit_dialog.addtask_btn.clicked.connect(self.update_task)
         self.edit_dialog.taskcount_spinbox.hide()
-        self.edit_dialog.profile_box.clear()
-        self.edit_dialog.proxies_box.clear()
+        # self.edit_dialog.profile_box.clear()
+        # self.edit_dialog.proxies_box.clear()
         profile_combobox = self.parent().parent().parent().parent().parent().parent().parent().createdialog.profile_box
         for profile in [profile_combobox.itemText(i) for i in range(profile_combobox.count())]:
             self.edit_dialog.profile_box.addItem(profile)
-        proxies_combobox = self.parent().parent().parent().parent().parent().parent().parent().createdialog.proxies_box
-        for proxy in [proxies_combobox.itemText(i) for i in range(proxies_combobox.count())]:
-            self.edit_dialog.proxies_box.addItem(proxy)
+        # proxies_combobox = self.parent().parent().parent().parent().parent().parent().parent().createdialog.proxies_box
+        # for proxy in [proxies_combobox.itemText(i) for i in range(proxies_combobox.count())]:
+            # self.edit_dialog.proxies_box.addItem(proxy)
         self.edit_dialog.load_data(self)
         self.edit_dialog.show()
 
