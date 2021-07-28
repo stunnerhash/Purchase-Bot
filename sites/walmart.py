@@ -7,7 +7,8 @@ import urllib, requests, time, lxml.html, json, sys, settings
 
 
 class Walmart:
-    def __init__(self, task_id, status_signal, image_signal, wait_poll_signal, polling_wait_condition, product, profile, proxy, monitor_delay, error_delay, max_price):
+    def __init__(self, task_id, status_signal, image_signal, wait_poll_signal, polling_wait_condition, product, profile,
+                 proxy, monitor_delay, error_delay, max_price):
         self.task_id, self.status_signal, self.image_signal, self.product, self.profile, self.monitor_delay, self.error_delay, self.max_price = task_id, status_signal, image_signal, product, profile, float(
             monitor_delay), float(error_delay), max_price
 
@@ -120,7 +121,7 @@ class Walmart:
                     return True
                 else:
                     self.handle_captcha("https://www.walmart.com/cart")
-                    self.status_signal.emit({"msg": "Waiting to add To Cart", "status": "error"})
+                    self.status_signal.emit({"msg": "Waiting to Add To Cart", "status": "error"})
                     time.sleep(self.error_delay)
                     return False
             except Exception as e:
